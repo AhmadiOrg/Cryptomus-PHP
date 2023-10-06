@@ -1,14 +1,19 @@
 # Cryptomus-PHP
-A class to communicate with the Cryptomus web service
-
+  A class to communicate with the Cryptomus web service
+  
+  read api document : https://doc.cryptomus.com/
+  
 # How to use 
 
-<?php
-require_once('./cryptomus.php');
+    <?php
+    require_once('./cryptomus.php');
+    
+    define('MERCHANT_UUID', 'put_your_merchent_id'); # put cryptomus merchent id
+    define('PAYMENT_KEY', 'put_your_payment_key'); # put cryptomus payment key
+    
+    $cm = new Cryptomus(MERCHANT_UUID, PAYMENT_KEY);
+    ?>
 
-define('MERCHANT_UUID', 'put_your_merchent_id'); # put cryptomus merchent id
-define('PAYMENT_KEY', 'put_your_payment_key'); # put cryptomus payment key
+  get methods list
 
-$cm = new Cryptomus(MERCHANT_UUID, PAYMENT_KEY);
-?>
-
+    print_r($cm->methodsList());
